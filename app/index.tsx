@@ -69,7 +69,7 @@ export default function Index() {
   );
 
   return (
-     <BottomSheetModalProvider>
+    <BottomSheetModalProvider>
       <View style={[styles.container, { paddingTop: top + 30 }]}>
         <Image source={require('@/assets/images/login/trello.png')} style={styles.image} />
         <Text style={styles.introText}>Move teamwork forward - even on the go</Text>
@@ -84,18 +84,16 @@ export default function Index() {
           </TouchableOpacity>
 
           <Text style={styles.description}>
-            By signing up, you agree to the{' '}
+            By signing up, you agree to the
             <Text style={styles.link} onPress={openLink}>
               User Notice
-            </Text>{' '}
-            and{' '}
+            </Text> and
             <Text style={styles.link} onPress={openLink}>
               Privacy Policy
-            </Text>
-            .
+            </Text>.
           </Text>
 
-          <Text style={styles.link} onPress={openActionSheet}>
+          <Text style={styles.SignUpText} onPress={openActionSheet}>
             Can't log in our sign up?
           </Text>
         </View>
@@ -108,7 +106,7 @@ export default function Index() {
         backdropComponent={renderBackdrop}
         enableOverDrag={false}
         enablePanDownToClose>
-        <AuthModal authType={authType} />
+        ]          <AuthModal authType={authType} />
       </BottomSheetModal>
     </BottomSheetModalProvider>
   );
@@ -121,7 +119,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    height: 450,
+    height: 420,
     paddingHorizontal: 40,
     resizeMode: 'contain',
   },
@@ -157,5 +155,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center',
     textDecorationLine: 'underline',
+  },
+  SignUpText: {
+    color: '#fff',
+    fontSize: 12,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+    marginBottom: 10
   },
 });
